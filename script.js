@@ -10,13 +10,19 @@ function searchBooks() {
       booksContainer.innerHTML = '';
       Object.entries(data.items).forEach(book => {
         let bookInfo = book[1].volumeInfo;
-        console.log(book[1].volumeInfo);
+        console.log(bookInfo);
+        let title = bookInfo.title;
+        let authors = bookInfo.authors.join(', ');
+        let publisher = bookInfo.publisher;
+        let image = bookInfo.imageLinks.smallThumbnail;
+        let link = bookInfo.canonicalVolumeLink;
         let bookDiv = document.createElement('div');
         bookDiv.innerHTML = `
-          <p>${bookInfo.title}</p>
-          <p>${bookInfo.authors.join(', ')}</p>
-          <p>${bookInfo.publisher}</p>
-          <img src='${bookInfo.imageLinks.smallThumbnail}'>
+          <p>${title}</p>
+          <p>${authors}</p>
+          <p>${publisher}</p>
+          <img src='${image}' alt='book thumbnail'>
+          <a href='${link}' target='_blank'>more info</a>
         `;
         document.querySelector('#books-container').appendChild(bookDiv);
       })
