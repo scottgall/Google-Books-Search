@@ -1,3 +1,7 @@
+const inputField = document.querySelector('#input-field');
+const searchButton = document.querySelector('#search-button');
+const booksContainer = document.querySelector('#books-container');
+
 function searchBooks() {
   let query = document.querySelector('#input-field').value.trim();
     if (query === '') {
@@ -10,7 +14,6 @@ function searchBooks() {
       booksContainer.innerHTML = '';
       Object.entries(data.items).forEach(book => {
         let bookInfo = book[1].volumeInfo;
-        console.log(bookInfo);
         let title = bookInfo.title;
         let authors = bookInfo.authors.join(', ');
         let publisher = bookInfo.publisher;
@@ -29,7 +32,20 @@ function searchBooks() {
   });
 }
 
-const searchButton = document.querySelector('#search-button');
-const booksContainer = document.querySelector('#books-container');
+function keyDown(e) {
+  if (e.keyCode === 13) {
+    searchButton.classList.add('active');
+  }
+}
 
-searchButton.addEventListener('click', searchBooks)
+function keyUp(e) {
+  if (e.keyCode === 13) {
+    searchButton.classList.remove('active');
+    searchButton.click();
+  }
+}
+
+searchButton.addEventListener('click', searchBooks);
+searchButton.addEventListener('keydown', (e) => keyDown(e));
+searchButton.addEventListener('keyup', (e) => keyUp(e));
+inputField.addEventListener('keydown', (e) => keyDown(e));inputField.addEventListener('keyup', (e) => keyUp(e));
