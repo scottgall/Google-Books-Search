@@ -56,6 +56,7 @@ function keyUp(e) {
 }
 
 searchButton.addEventListener('click', searchBooks);
-searchButton.addEventListener('keydown', (e) => keyDown(e));
-searchButton.addEventListener('keyup', (e) => keyUp(e));
-inputField.addEventListener('keydown', (e) => keyDown(e));inputField.addEventListener('keyup', (e) => keyUp(e));
+searchButton.addEventListener('keydown', keyDown);
+searchButton.addEventListener('keyup', keyUp);
+inputField.addEventListener('keydown', keyDown);
+inputField.addEventListener('keyup', keyUp);
