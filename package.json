@@ -1,0 +1,24 @@
+{
+  "name": "Google-Books-Search",
+  "version": "1.0.0",
+  "description": "JS Google Books API search app",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottgall/Google-Books-Search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottgall/Google-Books-Search/issues"
+  },
+  "homepage": "https://github.com/scottgall/Google-Books-Search#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

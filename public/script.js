@@ -22,7 +22,7 @@ function searchBooks() {
           <p>${authors}</p>
           <p>${publisher}</p>
           <img src='${image}' alt='book thumbnail'>
-          <a href='${link}' target='_blank'>more info</a>
+          <a href='${link}' target='_blank'>more</a>
         `;
         document.querySelector('#books-container').appendChild(bookDiv);
       })
